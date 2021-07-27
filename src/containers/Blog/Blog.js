@@ -6,7 +6,6 @@ import "./Blog.css";
 
 import Posts from "./Posts/Posts";
 import NewPost from "./NewPost/NewPost";
-import FullPost from "./FullPost/FullPost";
 
 class Blog extends Component {
   render() {
@@ -17,7 +16,7 @@ class Blog extends Component {
             <ul>
               <li>
                 <NavLink
-                  to="/"
+                  to="/posts/"
                   exact
                   activeClassName="my-active"
                   activeStyle={{
@@ -25,7 +24,7 @@ class Blog extends Component {
                     textDecoration: "underline",
                   }}
                 >
-                  Home
+                  Posts
                 </NavLink>
               </li>
               <li>
@@ -45,11 +44,10 @@ class Blog extends Component {
         {/* <Route path="/" exact render={()=><h1>home</h1>}/>
         <Route path="/" render={()=><h1>home 2</h1>}/> */}
         {/**order is important */}
-        <Route path="/" exact component={Posts} />
 
         <Switch>
           <Route path="/new-post" component={NewPost} />
-          <Route path="/:id" exact component={FullPost} />
+          <Route path="/posts" component={Posts} />
         </Switch>
       </div>
     );
